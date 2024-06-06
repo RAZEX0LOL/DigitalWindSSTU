@@ -1,11 +1,11 @@
 import React from "react";
-import "./../index.css";
-import GR20 from "./../assets/Group 20.png";
-import GR21 from "./../assets/Group 21.png";
-import GR99 from "./../assets/Group 99.png";
-import F5 from "./../assets/Frame 5.svg";
-import GR23 from "./../assets/Group 23.svg";
-import F7 from "./../assets/Frame 7.svg";
+import "../../index.css";
+import GR20 from "../../assets/Group 20.png";
+import GR21 from "../../assets/Group 21.png";
+import GR99 from "../../assets/Group 99.png";
+import F5 from "../../assets/Frame 5.svg";
+import GR23 from "../../assets/Group 23.svg";
+import F7 from "../../assets/Frame 7.svg";
 
 export default function Nominations(){
     return(

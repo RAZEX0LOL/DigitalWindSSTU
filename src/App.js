@@ -1,180 +1,24 @@
-// import React, {useEffect, useState} from "react";
-// import AllNews from "./components/AllNews";
-// import Footer from "./components/Footer";
-// import AllInfo from "./components/AllInfo";
-// import MainPage from "./components/MainPage";
-// import Banner from "./components/Banner";
-// import Header from "./components/Header";
-// import Contacts from "./components/Contacts";
-// import OrganizatorsAndPartners from "./components/OrganizatorsAndPartners";
-// import Catalog from "./components/Catalog";
-// import axios from "axios";
-// import NewAllInfo from "./components/WorkAllInfo";
-// import WorkAllInfo from "./components/WorkAllInfo";
-//
-// export default function App() {
-//     const [showAllNews, setShowAllNews] = useState(false);
-//     const [showAllInfo, setShowAllInfo] = useState(false);
-//     const [showContacts, setShowContacts] = useState(false);
-//     const [showOrganizatorsAndPartners,setShowOrganizatorsAndPartners]=useState(false);
-//     const [showCatalog,setShowCatalog]=useState(false);
-//     const [newsData, setNewsData] = useState([]);
-//     const [allNewsData,setAllNewsData]=useState([]);
-//     const [allNewInfo,setAllNewInfo]=useState(false);
-//     const [selectedNewsData, setSelectedNewsData] = useState(null);
-//     const [worksData,setWorksData]=useState([]);
-//     const [showWork,setShowWork]=useState(false);
-//
-//
-//
-//     useEffect(() => {
-//         async function fetchData() {
-//             try {
-//                 const newsResponse = await axios.get('http://localhost:8000/api/news/last');
-//                 const allNewsResponce=await axios.get('http://localhost:8000/api/news');
-//                 const allWorksResponce=await axios.get('http://localhost:8000/api/creations');
-//                 setNewsData(newsResponse.data);
-//                 setAllNewsData(allNewsResponce.data);
-//                 setWorksData(allWorksResponce.data);
-//
-//             } catch (error) {
-//                 alert("Ошибка при загрузке данных! Повторите попытку позже");
-//                 console.log(error);
-//             }
-//         }
-//         fetchData();
-//     }, []);
-//
-//
-//
-//     const showNews = () => {
-//         setShowAllNews((prev) => !prev);
-//         if (showAllInfo || showContacts || showOrganizatorsAndPartners || showCatalog || allNewInfo || showWork) {
-//             setShowAllInfo(false);
-//             setShowContacts(false);
-//             setShowOrganizatorsAndPartners(false);
-//             setShowCatalog(false);
-//             setAllNewInfo(false);
-//             setShowWork(false);
-//         }
-//     };
-//
-//     const showInfo = () => {
-//         setShowAllInfo((prev) => !prev);
-//         if (showAllNews || showContacts || showOrganizatorsAndPartners || showCatalog || allNewInfo || showWork) {
-//             setShowAllNews(false);
-//             setShowContacts(false);
-//             setShowOrganizatorsAndPartners(false);
-//             setShowCatalog(false);
-//             setAllNewInfo(false);
-//             setShowWork(false);
-//         }
-//     };
-//
-//     const showAllContacts = () => {
-//         setShowContacts((prev) => !prev);
-//         if (showAllNews || showAllInfo || showOrganizatorsAndPartners || showCatalog || allNewInfo || showWork)  {
-//             setShowAllNews(false);
-//             setShowAllInfo(false);
-//             setShowOrganizatorsAndPartners(false);
-//             setShowCatalog(false);
-//             setAllNewInfo(false);
-//             setShowWork(false);
-//         }
-//     };
-//
-//     const showAllOrganizatorsAndPartners=()=>{
-//         setShowOrganizatorsAndPartners((prev) => !prev);
-//         if (showAllNews || showAllInfo || showContacts || showCatalog || allNewInfo || showWork) {
-//             setShowAllNews(false);
-//             setShowAllInfo(false);
-//             setShowContacts(false);
-//             setShowCatalog(false);
-//             setAllNewInfo(false);
-//             setShowWork(false);
-//         }
-//     }
-//     const showAllCatalog=()=>{
-//         setShowCatalog((prev) => !prev);
-//         if (showAllNews || showAllInfo || showContacts || showOrganizatorsAndPartners || allNewInfo || showWork) {
-//             setShowAllNews(false);
-//             setShowAllInfo(false);
-//             setShowContacts(false);
-//             setShowOrganizatorsAndPartners(false);
-//             setAllNewInfo(false);
-//             setShowWork(false);
-//         }
-//     }
-//
-//     const showAllNewInfo = (id) => {
-//         const selectedNews = allNewsData.find(newsItem => newsItem.id === id);
-//         if (selectedNews) {
-//             setSelectedNewsData(selectedNews);
-//             setAllNewInfo(true);
-//             setShowAllNews(false);
-//             setShowAllInfo(false);
-//             setShowContacts(false);
-//             setShowOrganizatorsAndPartners(false);
-//             setShowCatalog(false);
-//             setShowWork(false);
-//         }
-//     }
-//
-//     const showWorkInfo=()=>{
-//         setShowWork((prev) => !prev);
-//         if (showAllNews || showAllInfo || showContacts || showOrganizatorsAndPartners || allNewInfo || showCatalog) {
-//             setShowAllNews(false);
-//             setShowAllInfo(false);
-//             setShowContacts(false);
-//             setShowOrganizatorsAndPartners(false);
-//             setAllNewInfo(false);
-//             setShowCatalog(false);
-//         }
-//     }
-//
-//
-//     return (
-//         <div className="App">
-//             <Header
-//                 showNews={showNews}
-//                 showAllInfo={showInfo}
-//                 showAllContacts={showAllContacts}
-//                 showAllOrganizatorsAndPartners={showAllOrganizatorsAndPartners}
-//                 showAllCatalog={showAllCatalog}
-//             />
-//             <Banner />
-//             {!showAllNews && !showAllInfo && !showContacts && !showOrganizatorsAndPartners && !showCatalog && !allNewInfo && !showWork && <MainPage newsData={newsData} showNews={showNews} showAllContacts={showAllContacts} showAllOrganizatorsAndPartners={showAllOrganizatorsAndPartners}/>}
-//             {showAllNews && <AllNews allNewsData={allNewsData}/>}
-//             {showAllInfo && <AllInfo />}
-//             {showContacts && <Contacts />}
-//             {showOrganizatorsAndPartners && <OrganizatorsAndPartners/>}
-//             {showCatalog && <Catalog worksData={worksData}/>}
-//             {allNewInfo && <NewAllInfo newsData={selectedNewsData} />}
-//             {showWork && <WorkAllInfo/>}
-//             <Footer />
-//         </div>
-//     );
-// }
-
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
-import AllNews from "./components/AllNews";
+import AllNews from "./components/mainPage/AllNews";
 import Footer from "./components/Footer";
-import AllInfo from "./components/AllInfo";
-import MainPage from "./components/MainPage";
-import Banner from "./components/Banner";
+import AllInfo from "./components/mainPage/AllInfo";
+import MainPage from "./components/mainPage/MainPage";
+import Banner from "./components/mainPage/Banner";
 import Header from "./components/Header";
-import Contacts from "./components/Contacts";
-import OrganizatorsAndPartners from "./components/OrganizatorsAndPartners";
-import Catalog from "./components/Catalog";
-import WorkAllInfo from "./components/WorkAllInfo";
+import Contacts from "./components/mainPage/Contacts";
+import OrganizatorsAndPartners from "./components/mainPage/OrganizatorsAndPartners";
+import Catalog from "./components/mainPage/Catalog";
+import WorkAllInfo from "./components/userPage/WorkAllInfo";
+import Auth from "./components/mainPage/Auth";
+import Register from "./components/mainPage/Register";
+import ReturnPassword from "./components/mainPage/ReturnPassword"; // Import the new component
 
 export default function App() {
     const [showAllNews, setShowAllNews] = useState(false);
     const [showAllInfo, setShowAllInfo] = useState(false);
     const [showContacts, setShowContacts] = useState(false);
-    const [showOrganizatorsAndPartners, setShowOrganizatorsAndPartners] =
-        useState(false);
+    const [showOrganizatorsAndPartners, setShowOrganizatorsAndPartners] = useState(false);
     const [showCatalog, setShowCatalog] = useState(false);
     const [newsData, setNewsData] = useState([]);
     const [allNewsData, setAllNewsData] = useState([]);
@@ -182,19 +26,16 @@ export default function App() {
     const [showWork, setShowWork] = useState(false);
     const [selectedWorkData, setSelectedWorkData] = useState(null);
     const [showMainPage, setShowMainPage] = useState(true);
+    const [showAuth, setShowAuth] = useState(false);
+    const [showRegister, setShowRegister] = useState(false);
+    const [showReturnPassword, setShowReturnPassword] = useState(false); // New state
 
     useEffect(() => {
         async function fetchData() {
             try {
-                const newsResponse = await axios.get(
-                    "http://localhost:8000/api/news/last"
-                );
-                const allNewsResponse = await axios.get(
-                    "http://localhost:8000/api/news"
-                );
-                const allWorksResponse = await axios.get(
-                    "http://localhost:8000/api/creations"
-                );
+                const newsResponse = await axios.get("http://localhost:8000/api/news/last");
+                const allNewsResponse = await axios.get("http://localhost:8000/api/news");
+                const allWorksResponse = await axios.get("http://localhost:8000/api/creations");
                 setNewsData(newsResponse.data);
                 setAllNewsData(allNewsResponse.data);
                 setWorksData(allWorksResponse.data);
@@ -208,116 +49,72 @@ export default function App() {
     }, []);
 
     const showNews = () => {
-        setShowAllNews((prev) => !prev);
-        if (
-            showAllInfo ||
-            showContacts ||
-            showOrganizatorsAndPartners ||
-            showCatalog ||
-            showWork
-        ) {
-            setShowAllInfo(false);
-            setShowContacts(false);
-            setShowOrganizatorsAndPartners(false);
-            setShowCatalog(false);
-            setShowWork(false);
-        }
+        resetOtherViews();
+        setShowAllNews(true);
     };
 
     const showInfo = () => {
-        setShowAllInfo((prev) => !prev);
-        if (
-            showAllNews ||
-            showContacts ||
-            showOrganizatorsAndPartners ||
-            showCatalog ||
-            showWork
-        ) {
-            setShowAllNews(false);
-            setShowContacts(false);
-            setShowOrganizatorsAndPartners(false);
-            setShowCatalog(false);
-            setShowWork(false);
-        }
+        resetOtherViews();
+        setShowAllInfo(true);
     };
 
     const showAllContacts = () => {
-        setShowContacts((prev) => !prev);
-        if (
-            showAllNews ||
-            showAllInfo ||
-            showOrganizatorsAndPartners ||
-            showCatalog ||
-            showWork
-        ) {
-            setShowAllNews(false);
-            setShowAllInfo(false);
-            setShowOrganizatorsAndPartners(false);
-            setShowCatalog(false);
-            setShowWork(false);
-        }
+        resetOtherViews();
+        setShowContacts(true);
     };
 
     const showAllOrganizatorsAndPartners = () => {
-        setShowOrganizatorsAndPartners((prev) => !prev);
-        if (
-            showAllNews ||
-            showAllInfo ||
-            showContacts ||
-            showCatalog ||
-            showWork
-        ) {
-            setShowAllNews(false);
-            setShowAllInfo(false);
-            setShowContacts(false);
-            setShowCatalog(false);
-            setShowWork(false);
-        }
+        resetOtherViews();
+        setShowOrganizatorsAndPartners(true);
     };
 
     const showAllCatalog = () => {
-        setShowCatalog((prev) => !prev);
-        if (
-            showAllNews ||
-            showAllInfo ||
-            showContacts ||
-            showOrganizatorsAndPartners ||
-            showWork
-        ) {
-            setShowAllNews(false);
-            setShowAllInfo(false);
-            setShowContacts(false);
-            setShowOrganizatorsAndPartners(false);
-            setShowWork(false);
-        }
+        resetOtherViews();
+        setShowCatalog(true);
     };
 
     const showWorkInfo = (workData) => {
+        resetOtherViews();
         setSelectedWorkData(workData);
         setShowWork(true);
-        if (
-            showAllNews ||
-            showAllInfo ||
-            showContacts ||
-            showOrganizatorsAndPartners ||
-            showCatalog
-        ) {
-            setShowAllNews(false);
-            setShowAllInfo(false);
-            setShowContacts(false);
-            setShowOrganizatorsAndPartners(false);
-            setShowCatalog(false);
-        }
     };
 
-    const hideAllComponentsExceptMainPage = () => {
+    const resetOtherViews = () => {
         setShowAllNews(false);
         setShowAllInfo(false);
         setShowContacts(false);
         setShowOrganizatorsAndPartners(false);
         setShowCatalog(false);
         setShowWork(false);
+        setShowMainPage(false);
+    };
+
+    const handleLogout = () => {
+        setShowAuth(true);
+        resetOtherViews();
+    };
+
+    const showMainPageHandler = () => {
         setShowMainPage(true);
+        setShowAuth(false);
+        setShowRegister(false);
+        setShowReturnPassword(false);
+    };
+
+    const showRegisterHandler = () => {
+        setShowRegister(true);
+        setShowAuth(false);
+    };
+
+    const showAuthHandler = () => {
+        setShowAuth(true);
+        setShowRegister(false);
+        setShowReturnPassword(false); // Hide return password view
+    };
+
+    const showReturnPasswordHandler = () => {
+        setShowReturnPassword(true);
+        setShowAuth(false);
     };
 
     return (
@@ -328,33 +125,28 @@ export default function App() {
                 showAllContacts={showAllContacts}
                 showAllOrganizatorsAndPartners={showAllOrganizatorsAndPartners}
                 showAllCatalog={showAllCatalog}
-                showMainPage={hideAllComponentsExceptMainPage}
+                showMainPage={showMainPageHandler}
+                handleLogout={handleLogout}
             />
-            <Banner/>
-            {!showAllNews &&
-                !showAllInfo &&
-                !showContacts &&
-                !showOrganizatorsAndPartners &&
-                !showCatalog &&
-                !showWork && (
-                    <MainPage
-                        newsData={newsData}
-                        showNews={showNews}
-                        showAllContacts={showAllContacts}
-                        showAllOrganizatorsAndPartners={showAllOrganizatorsAndPartners}
-                    />
-                )}
-            {showAllNews && <AllNews allNewsData={allNewsData}/>}
-            {showAllInfo && <AllInfo/>}
-            {showContacts && <Contacts/>}
-            {showOrganizatorsAndPartners && <OrganizatorsAndPartners/>}
-            {showCatalog && (
-                <Catalog worksData={worksData} showWorkInfo={showWorkInfo}/>
+            {!showAuth && !showRegister && !showReturnPassword && <Banner />}
+            {!showAuth && !showRegister && !showReturnPassword && showMainPage && !showAllNews && !showAllInfo && !showContacts && !showOrganizatorsAndPartners && !showCatalog && !showWork && (
+                <MainPage
+                    newsData={newsData}
+                    showNews={showNews}
+                    showAllContacts={showAllContacts}
+                    showAllOrganizatorsAndPartners={showAllOrganizatorsAndPartners}
+                />
             )}
-            {showWork && selectedWorkData && (
-                <WorkAllInfo workData={selectedWorkData}/>
-            )}
-            <Footer/>
+            {!showAuth && !showRegister && !showReturnPassword && showAllNews && <AllNews allNewsData={allNewsData} />}
+            {!showAuth && !showRegister && !showReturnPassword && showAllInfo && <AllInfo />}
+            {!showAuth && !showRegister && !showReturnPassword && showContacts && <Contacts />}
+            {!showAuth && !showRegister && !showReturnPassword && showOrganizatorsAndPartners && <OrganizatorsAndPartners />}
+            {!showAuth && !showRegister && !showReturnPassword && showCatalog && <Catalog worksData={worksData} showWorkInfo={showWorkInfo} />}
+            {!showAuth && !showRegister && !showReturnPassword && showWork && selectedWorkData && <WorkAllInfo workData={selectedWorkData} />}
+            {showAuth && <Auth showRegister={showRegisterHandler} showReturnPassword={showReturnPasswordHandler} />} {/* Pass handler */}
+            {showRegister && <Register showAuth={showAuthHandler} />}
+            {showReturnPassword && <ReturnPassword showAuth={showAuthHandler} />}
+            {!showAuth && !showRegister && !showReturnPassword && <Footer />}
         </div>
     );
 }

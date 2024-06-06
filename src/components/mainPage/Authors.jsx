@@ -1,7 +1,7 @@
 import React from "react";
-import GR91 from "./../assets/Group 91.png";
-import SGTU from "./../assets/SGTULOGO.png";
-import INPIT from "./../assets/logo_inpit 1.png";
+import GR91 from "../../assets/Group 91.png";
+import SGTU from "../../assets/SGTULOGO.png";
+import INPIT from "../../assets/logo_inpit 1.png";
 
 
 export default function Authors(props){

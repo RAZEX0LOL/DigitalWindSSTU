@@ -1,11 +1,11 @@
 import React from "react";
-import GR95 from "./../assets/Group 95.png";
-import SGTU from "../assets/SGTULOGO.png";
-import INPIT from "../assets/logo_inpit 1.png";
-import organizations from "../assets/Организаторы.png";
-import organizers from "./../assets/ОТветственные.png";
-import organizator1 from "./../assets/Ellipse 3.png";
-import organizator2 from "./../assets/Ellipse 4.png";
+import GR95 from "../../assets/Group 95.png";
+import SGTU from "../../assets/SGTULOGO.png";
+import INPIT from "../../assets/logo_inpit 1.png";
+import organizations from "../../assets/Организаторы.png";
+import organizers from "../../assets/ОТветственные.png";
+import organizator1 from "../../assets/Ellipse 3.png";
+import organizator2 from "../../assets/Ellipse 4.png";
 
 export default function Contacts() {
     return (

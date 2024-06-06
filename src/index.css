@@ -36,7 +36,7 @@ nav {
 
 }
 
-.header_nav_info {
+.header_nav_info_main {
     display: flex;
     flex-direction: row;
     gap: 1.5rem;
@@ -926,8 +926,228 @@ textarea::placeholder{
 }
 .work-block-info{
     width: 80%;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
 }
-.work-block-info > img{
+.work-block-info div{
+    width: 50%;
+}
+.text-info{
+    width: 50%;
+}
+.text-info h2{
+    color: #2196F3;
+    margin: 0 0 30px 30px ;
+    font-size: 38px;
+}
+.text-info p{
+    margin: 30px 0 30px 30px ;
+}
+.work-block-info > div > img{
     width: 100%;
+    background-size: cover;
 }
 
+
+
+.auth-block{
+    width: 100%;
+    background: url("./assets/AuthBackground.png");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.form-block{
+    width: 30%;
+    margin-top: 200px;
+
+}
+.form-block form{
+    width: 100%;
+    margin: 0;
+}
+.form-div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.form-div label{
+    color:#fff;
+    align-content: center;
+}
+.form-div input{
+    margin-bottom: 0;
+    padding: 0 20px;
+    color: #fff;
+    font-size: 20px;
+}
+.submit-button{
+    height: 51px;
+    background: #FB8A05;
+    border: 1px solid #FB8A05;
+    color: #fff;
+    font-size: 20px;
+    font-family: "Open Sans";
+    font-weight: bold;
+    margin-bottom: 60px;
+}
+.links{
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+}
+.links a{
+    text-align: center;
+    color: #fff;
+    width: 30%;
+    margin-bottom: 10px;
+}
+
+.register-block{
+    width: 100%;
+    background: url("./assets/registrateBackground.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+.form-registrate-block{
+    width: 66%;
+    margin-top: 60px;
+}
+.form-registrate-block form{
+    width: 100%;
+    margin: 80px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.register-inputs-block{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+}
+.form-div-register{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.form-div-register label{
+    color:#fff;
+    align-content: center;
+    width: 20%;
+}
+.form-div-register input{
+    margin-bottom: 0;
+    padding: 0 20px;
+    color: #fff;
+    font-size: 20px;
+    width: 70%;
+}
+
+.radio-group{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+/* Add this to your index.css */
+.radio-container, .checkbox-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
+    color: #fff;
+}
+
+.checkbox-container {
+    justify-content: space-between;
+}
+
+.radio-container input, .checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark, .checkmark-checkbox {
+    position: relative;
+    height: 25px;
+    width: 25px;
+    background-color: transparent;
+    border: 2px solid #2196F3;
+}
+
+.radio-container .checkmark {
+    border-radius: 4px;
+}
+
+.checkbox-container .checkmark-checkbox {
+    border-radius: 4px;
+}
+
+.radio-container:hover input ~ .checkmark, .checkbox-container:hover input ~ .checkmark-checkbox {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.radio-container input:checked ~ .checkmark, .checkbox-container input:checked ~ .checkmark-checkbox {
+    background-color: #2196F3;
+    border-color: #2196F3;
+}
+
+.checkmark:after, .checkmark-checkbox:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.radio-container input:checked ~ .checkmark:after, .checkbox-container input:checked ~ .checkmark-checkbox:after {
+    display: block;
+}
+
+.radio-container .checkmark:after, .checkbox-container .checkmark-checkbox:after {
+    top: 3px;
+    left: 3px;
+    width: 14px;
+    height: 14px;
+    background: white;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+    padding-right: 35px;
+}
+
+.checkbox-container .checkmark-checkbox {
+    position: absolute;
+    right: 0;
+}
+
+.return-password-block{
+    width: 100%;
+    background: url("./assets/registrateBackground.svg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}

@@ -1,22 +1,22 @@
 import React, { useState } from "react";
-import GR109 from "./../assets/Group 109.png";
-import GR20 from "../assets/Group 20.png";
-import GR21 from "../assets/Group 21.png";
-import GR99 from "../assets/Group 99.png";
-import F5 from "../assets/Frame 5.svg";
-import GR23 from "../assets/Group 23.svg";
-import F7 from "../assets/Frame 7.svg";
-import F6 from "./../assets/Frame 6.png";
-import unplash from "./../assets/unsplash_tZc3vjPCk-Q.png";
-import WorkAllInfo from "./WorkAllInfo";
-import F1 from "./../assets/Frame 1.png";
-import F2 from "./../assets/Frame 37.png"
-import F3 from "./../assets/Frame 38.png";
-import F4 from "./../assets/Frame 35.png";
-import F8 from "./../assets/Frame 11.png";
-import F9 from "./../assets/Frame 36.png";
-import F10 from "../assets/Frame 13.png";
-import ErrorIMG from "./../assets/Vector.png";
+import GR109 from "../../assets/Group 109.png";
+import GR20 from "../../assets/Group 20.png";
+import GR21 from "../../assets/Group 21.png";
+import GR99 from "../../assets/Group 99.png";
+import F5 from "../../assets/Frame 5.svg";
+import GR23 from "../../assets/Group 23.svg";
+import F7 from "../../assets/Frame 7.svg";
+import F6 from "../../assets/Frame 6.png";
+import unplash from "../../assets/unsplash_tZc3vjPCk-Q.png";
+import WorkAllInfo from "../userPage/WorkAllInfo";
+import F1 from "../../assets/Frame 1.png";
+import F2 from "../../assets/Frame 37.png"
+import F3 from "../../assets/Frame 38.png";
+import F4 from "../../assets/Frame 35.png";
+import F8 from "../../assets/Frame 11.png";
+import F9 from "../../assets/Frame 36.png";
+import F10 from "../../assets/Frame 13.png";
+import ErrorIMG from "../../assets/Vector.png";
 
 export default function Catalog(props) {
     const [selectedNomination, setSelectedNomination] = useState(null);

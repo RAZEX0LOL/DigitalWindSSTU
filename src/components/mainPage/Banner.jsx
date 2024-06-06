@@ -1,11 +1,11 @@
 import React from "react";
-import "./../index.css";
-import unplash from "./../assets/unsplash_-uHVRvDr7pg.svg";
-import vector from "./../assets/Vector 18.png";
-import rectangle from "./../assets/Rectangle 61.png";
-import g22 from "./../assets/Group 22.svg";
-import g13 from "./../assets/Group 13.svg";
-import wire from "./../assets/wire.svg";
+import "../../index.css";
+import unplash from "../../assets/unsplash_-uHVRvDr7pg.svg";
+import vector from "../../assets/Vector 18.png";
+import rectangle from "../../assets/Rectangle 61.png";
+import g22 from "../../assets/Group 22.svg";
+import g13 from "../../assets/Group 13.svg";
+import wire from "../../assets/wire.svg";
 
 export default function Banner() {
     return (

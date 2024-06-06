@@ -1,6 +1,6 @@
 import React from "react";
-import GR94 from "../assets/Group 111.png";
-import "./../index.css";
+import GR94 from "../../assets/Group 111.png";
+import "../../index.css";
 
 export default function AllInfo(){
     return(

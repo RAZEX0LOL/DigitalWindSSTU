@@ -1,6 +1,6 @@
 import React from "react";
-import "./../index.css";
-import GR from "./../assets/Group 87.svg";
+import "../../index.css";
+import GR from "../../assets/Group 87.svg";
 
 export default function Info(){
     return(

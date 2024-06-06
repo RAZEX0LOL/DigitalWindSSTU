@@ -1,9 +1,9 @@
 import React from "react";
-import GR199 from "../assets/Group 199.png";
-import sib from "./../assets/1.png";
-import neo from "./../assets/2.png";
-import museum from "./../assets/museum 1.png";
-import ssl from "./../assets/7.png";
+import GR199 from "../../assets/Group 199.png";
+import sib from "../../assets/1.png";
+import neo from "../../assets/2.png";
+import museum from "../../assets/museum 1.png";
+import ssl from "../../assets/7.png";
 
 export default function Partners(props){
     return(

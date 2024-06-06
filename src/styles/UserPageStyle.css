@@ -1,0 +1,356 @@
+.wrapper{
+    width: 100%;
+}
+header {
+    width: 100%;
+
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 80%;
+    height: 8rem;
+    margin-left: 10%;
+
+    gap: 68px;
+    margin-top: -175px;
+    padding-right: 100px;
+
+
+}
+
+.header_nav_info {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_nav_info_2 {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    justify-content: flex-end;
+    margin-top: -15px;
+
+}
+
+.mainimg {
+    margin-top: 44px;
+    margin-left: 20%;
+    margin-bottom: 34px;
+    margin-right: 164px;
+    cursor: pointer;
+}
+
+.header__nav {
+    text-decoration: none;
+    color: rgb(39, 39, 39);
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 0;
+    cursor: pointer;
+}
+
+.header__nav__2 {
+    color: rgb(39, 39, 39);
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.header__nav__3 {
+    color: rgb(39, 39, 39);
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0;
+    text-align: left;
+    text-transform: uppercase;
+
+}
+
+.header__nav__name {
+    color: rgb(251, 138, 5);
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 23px;
+    letter-spacing: 0;
+    text-align: left;
+}
+
+.works-block{
+    width: 100%;
+    background: url("../assets/MyWorks.svg");
+    background-repeat: no-repeat;
+    margin: 100px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.container-works{
+    width: 70%;
+    margin-top: 90px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+.work-block{
+    width: 30%;
+    margin-top: 50px;
+    background: #2196F3;
+}
+.work-block img{
+    width: 100%;
+    margin-bottom: 5px;
+}
+.work-block p{
+    color:#ffffff;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.work-block button{
+    margin-left: 20px;
+    color: #2196F3;
+    background: white;
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid white;
+    height: 38px;
+    width: 50%;
+    margin-bottom: 10px;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 10px;
+    margin: 0 10px;
+    cursor: pointer;
+    background: rgba(231,224,255,0);
+    border: 1px solid rgba(231,224,255,0);
+    font-size: 18px;
+    color: #2196F3;
+}
+
+.pagination span {
+    margin: 0 10px;
+
+}
+
+.change-block{
+    width: 100%;
+    background: url("../assets/ChangeLogin.svg");
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.change-block h1{
+    color: white;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.form-change-block{
+    width: 30%;
+    margin-top: 150px;
+
+}
+.form-change-block form{
+    width: 100%;
+    margin: 0;
+}
+.form-div{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.form-div label{
+    color:#fff;
+    align-content: center;
+}
+.form-div input{
+    margin-bottom: 0;
+    padding: 0 20px;
+    color: #fff;
+    font-size: 20px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+.reset-button{
+    width: 45%;
+    height: 51px;
+    color: #fff;
+    background: rgba(231,224,255,0);
+    border: 3px solid white;
+    font-size: 20px;
+    font-family: "Open Sans";
+    font-weight: bold;
+}
+
+.submit-change-button{
+    width: 45%;
+    height: 51px;
+    background: #FB8A05;
+    border: 1px solid #FB8A05;
+    color: #fff;
+    font-size: 20px;
+    font-family: "Open Sans";
+    font-weight: bold;
+    margin-bottom: 60px;
+}
+.form-container {
+    background: url('../assets/AddWork.svg') no-repeat;
+    background-size: cover;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    color: #fff;
+    width: 100%;
+    margin: 20px auto;
+}
+
+.form-container form {
+    width: 80%;
+
+    margin: 100px auto 0 17%;
+}
+
+.form-container h2 {
+    text-align: center;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 60%;
+    margin: 10px 0;
+}
+
+.form-group label {
+    width: 30%;
+    margin-right: 10px;
+    font-size: 14px;
+    display: block;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 70%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background: rgba(44, 44, 44, 0.2);;
+}
+.form-group select{
+    color: white;
+    font-size: 15px;
+    background: rgba(44, 44, 44, 0.2);;
+}
+
+.file-container{
+    width: 70%;
+}
+.file-container input{
+    width: 100%;
+    background: rgba(44, 44, 44, 0.2);;
+}
+.file-container p{
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+
+.form-group-extra {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    width: 60%;
+}
+
+.form-group-extra label {
+    width: 30%;
+    margin-right: 8%;
+    font-size: 14px;
+    display: block;
+}
+
+.form-group-extra input,
+.form-group-extra select,
+.form-group-extra textarea {
+    width: 80%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+.form-group-extra input[type="text"]{
+    width: 80%;
+}
+.form-group-extra input[type="date"]{
+    width: 20%;
+    color: white;
+}
+
+
+.extra-participants{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+.extra-participants input{
+    width: 70%;
+}
+
+.form-container button {
+    background-color: #f47c20;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.participant-inputs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.warning-text {
+    color: #ff0000;
+    font-size: 12px;
+    margin-top: 5px;
+}

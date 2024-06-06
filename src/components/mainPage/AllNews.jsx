@@ -1,7 +1,7 @@
 import React from "react";
-import GR103 from "./../assets/Group 103.png";
-import "./../index.css";
-import unplash from "./../assets/unsplash_g1Kr4Ozfoac.png";
+import GR103 from "../../assets/Group 103.png";
+import "../../index.css";
+import unplash from "../../assets/unsplash_g1Kr4Ozfoac.png";
 
 export default function AllNews(props) {
     return (

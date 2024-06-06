@@ -21,18 +21,27 @@
 
 
 import React from "react";
-import GR115 from "./../assets/Group 115.png";
-import unplash1 from "./../assets/unsplash1.png";
+// import GR115 from "./../assets/Group 115.png";
+import unplash1 from "../../assets/unsplash1.png";
+import "../../index.css";
 
-export default function WorkAllInfo({workData}) {
+export default function WorkAllInfoJury({workData}) {
     return (
         <div className={"info-work"}>
             <div className={"work-block-info"}>
                 {/*<img src={workData.img} className={"img-info"} alt="Error" />*/}
-                <img src={unplash1} alt="Error"/>
                 <div>
-                    <h2>{workData && workData.title}</h2>
-                    <p>{workData && workData.description}</p>
+                    <img src={unplash1} alt="Error"/>
+                </div>
+                <div className={"text-info"}>
+                    {/*<h2>{workData && workData.title}</h2>*/}
+                    {/*<p>{workData && workData.description}</p>*/}
+                    <h2>Название работы</h2>
+                    <p>Описание Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar facilisi adipiscing purus auctor velit, elit aliquet.</p>
+                    <p>Номинация</p>
+                    <p>Возрастная группа</p>
+                    <p>Название файла работы</p>
+                    <a href={""} style={{marginLeft:30, color:"#2196F3"}}>ссылка</a>
                 </div>
             </div>
         </div>

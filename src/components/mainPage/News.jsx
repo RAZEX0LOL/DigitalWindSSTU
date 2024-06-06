@@ -56,9 +56,9 @@
 // }
 
 import React from "react";
-import GR100 from "./../assets/Group 100.png";
-import unplash1 from "./../assets/unsplash_g1Kr4Ozfoac.png";
-import "./../index.css";
+import GR100 from "../../assets/Group 100.png";
+import unplash1 from "../../assets/unsplash_g1Kr4Ozfoac.png";
+import "../../index.css";
 
 export default function News(props){
     if (!props.newsData || props.newsData.length === 0) {
