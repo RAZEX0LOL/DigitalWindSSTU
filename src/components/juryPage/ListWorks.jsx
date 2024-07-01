@@ -177,7 +177,7 @@ const works = [
         fileUrl: "https://example.com/file1",
         projectUrl: "https://yandex.ru",
     },
-]; // your work data
+];
 
 export default function ListWorks() {
     const [currentPage, setCurrentPage] = useState(1);

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import HeaderJury from "./HeaderJury";
 import ListWorks from "./ListWorks";
-import ProfileForm from "./ProfileForm";  // Import the ProfileForm component
+import ProfileForm from "./ProfileFormJury";
 
 export default function JuryPage() {
-    const [view, setView] = useState("works"); // Default to showing works
+    const [view, setView] = useState("works");
 
     const handleWorksClick = () => {
         setView("works");
