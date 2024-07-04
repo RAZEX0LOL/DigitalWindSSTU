@@ -3,7 +3,7 @@
 // import unplash1 from "./../assets/unsplash_g1Kr4Ozfoac.png"
 // import "./../index.css"
 //
-// export default function News(props){
+// export default function news(props){
 //     return(
 //         <div className={"news-block"}>
 //             <img src={GR100} alt="Error"/>

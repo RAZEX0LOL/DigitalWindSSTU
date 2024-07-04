@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import AllNews from "./components/mainPage/AllNews";
+import AllNews from "./components/mainPage/news/AllNews";
 import Footer from "./components/Footer";
 import AllInfo from "./components/mainPage/AllInfo";
 import MainPage from "./components/mainPage/MainPage";
@@ -12,7 +12,8 @@ import Catalog from "./components/mainPage/Catalog";
 import WorkAllInfo from "./components/userPage/WorkAllInfo";
 import Auth from "./components/mainPage/Auth";
 import Register from "./components/mainPage/Register";
-import ReturnPassword from "./components/mainPage/ReturnPassword"; // Import the new component
+import ReturnPassword from "./components/mainPage/ReturnPassword";
+import News from "./components/mainPage/News"; // Import the new component
 
 export default function App() {
     const [showAllNews, setShowAllNews] = useState(false);
@@ -137,7 +138,7 @@ export default function App() {
                     showAllOrganizatorsAndPartners={showAllOrganizatorsAndPartners}
                 />
             )}
-            {!showAuth && !showRegister && !showReturnPassword && showAllNews && <AllNews allNewsData={allNewsData} />}
+            {!showAuth && !showRegister && !showReturnPassword && showAllNews && <News allNewsData={allNewsData} />}
             {!showAuth && !showRegister && !showReturnPassword && showAllInfo && <AllInfo />}
             {!showAuth && !showRegister && !showReturnPassword && showContacts && <Contacts />}
             {!showAuth && !showRegister && !showReturnPassword && showOrganizatorsAndPartners && <OrganizatorsAndPartners />}
