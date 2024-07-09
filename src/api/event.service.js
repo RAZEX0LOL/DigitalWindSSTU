@@ -3,12 +3,17 @@ import {request} from "./request";
 /**
  * @typedef {Object} Event
  * @description Модель мероприятия
- * @property {number} id - Идентификатор события.
- * @property {string} title - Название события.
- * @property {string} date - Дата события.
- * @property {string} img - Изображение события.
- * @property {string} text - Описание события.
- * @property {number} countAvailablePlaces - Количество доступных мест на событие.
+ * @property {number} id - Идентификатор мероприятия.
+ * @property {string} title - Название мероприятия.
+ * @property {string} dateStart - Дата начала мероприятия.
+ * @property {string} dateEnd - Дата мероприятия.
+ * @property {string} authorName - Дата мероприятия.
+ * @property {string} authorJob - Дата мероприятия.
+ * @property {string} targetAudience - Дата мероприятия.
+ * @property {string} location - Дата мероприятия.
+ * @property {string} img - Изображение мероприятия.
+ * @property {string} text - Описание мероприятия.
+ * @property {number} countAvailablePlaces - Количество доступных мест на мероприятие.
  */
 
 export class EventService {
