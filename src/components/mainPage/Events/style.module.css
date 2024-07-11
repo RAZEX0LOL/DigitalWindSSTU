@@ -1,73 +1,112 @@
 .section {
-    width: 100%;
-    padding: 70px 0 30px;
-    background: var(--secondary-bg);
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+  width: 100%;
+  padding: 70px 0 30px;
+  background: var(--secondary-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .events {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .event {
-    width: 1140px;
-    height: 422px;
-    display: flex;
-    position: relative;
+  width: 1140px;
+  height: 422px;
+  display: flex;
+  position: relative;
 }
 
-.event__img { width: 748px; height: 422px; object-fit: cover; } .event__content { right: 40px; width: 470px; position: absolute; display: flex; flex-direction: column; z-index: 10; background: white; height: 350px; bottom: -30px; padding: 40px 44px 55px; border-top: 4px solid var(--primary-color); box-shadow: var(--shadow); } .event__title { font-size: 20px;
-    color: var(--text-color);
-    text-align: center;
-    font-weight: 600;
-    margin-bottom: 20px;
+.event__img {
+  width: 748px;
+  height: 422px;
+  object-fit: cover;
+}
+
+.event__content {
+  right: 40px;
+  width: 470px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  background: white;
+  height: 350px;
+  bottom: -30px;
+  padding: 40px 44px 55px;
+  border-top: 4px solid var(--primary-color);
+  box-shadow: var(--shadow);
+}
+
+.event__title {
+  font-size: 20px;
+  color: var(--text-color);
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 
 .event__text {
-    font-size: 16px;
-    text-align: justify;
-    margin: 0 0 10px;
+  font-size: 16px;
+  text-align: justify;
+  margin: 0 0 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow-wrap: break-word;
+
+}
+
+@supports (-ms-ime-align: auto) {
+  .event__text {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 .event__button {
-    text-underline: none;
-    text-decoration: none;
-    border: 2px solid var(--primary-color);
-    border-radius: 0;
-    background-color: transparent;
-    cursor: pointer;
-    padding: 8px 17px;
-    color: var(--text-color);
-    text-align: center;
-    margin: auto auto 0;
-    display: block;
-    transition: all .3s;
+  text-underline: none;
+  text-decoration: none;
+  border: 2px solid var(--primary-color);
+  border-radius: 0;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 8px 17px;
+  color: var(--text-color);
+  text-align: center;
+  margin: auto auto 0;
+  display: block;
+  transition: all .3s;
 }
 
 .dots {
-    padding-top: 20px;
-    display: flex;
-    justify-content: center;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .dot {
-    border-radius: 100%;
-    width: 12px;
-    height: 12px;
-    border: none;
-    background: #fff;
-    font-size: 0;
-    line-height: 1px;
-    color: transparent;
-    padding: 0;
-    margin: 0 7px;
-    cursor: pointer;
-    transition: background-color .3s ease-in-out;
+  border-radius: 100%;
+  width: 12px;
+  height: 12px;
+  border: none;
+  background: #fff;
+  font-size: 0;
+  line-height: 1px;
+  color: transparent;
+  padding: 0;
+  margin: 0 7px;
+  cursor: pointer;
+  transition: background-color .3s ease-in-out;
 }
 
 .dot_active {
-    background-color: var(--primary-color);
+  background-color: var(--primary-color);
 }
