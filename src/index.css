@@ -494,9 +494,44 @@ nav {
     width: 100%;
 }
 
+.all_news {
+    height: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 32px;
+}
+
+.allNewsContainer {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+
+.allNewsH1Container {
+    width: 100%;
+    padding: 15px;
+    display: flex;
+}
+
+.allNewsH1 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.single_news {
+    display: flex;
+    margin-top: 16px;
+}
+
 .authors img{
     width: 100%;
-    margin-top: 40px;
 }
 .sgtu-authors{
     width: 80%;

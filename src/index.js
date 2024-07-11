@@ -6,6 +6,7 @@ import AdminPage from "./components/adminPage/AdminPage";
 import { RouterProvider, createHashRouter } from "react-router-dom";
 import JuryPage from "./components/juryPage/JuryPage";
 import UserPage from "./components/userPage/UserPage";
+import NewsPage from "./components/newsPage/NewsPage";
 
 
 const router = createHashRouter([
@@ -24,6 +25,10 @@ const router = createHashRouter([
     {
         path:"/user",
         element:<UserPage/>
+    },
+    {
+        path:"/news/:id",
+        element: <NewsPage/>
     }
 ]);
 

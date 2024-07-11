@@ -5,7 +5,9 @@
 }
 
 .newsImage{
+    position: absolute;
     padding-top: 28px;
+    width: 100%;
 }
 
 .cardItems {
@@ -22,9 +24,15 @@
 
 
 .allMainBlock {
+    top:100px;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: flex-end;
+}
+
+.p_news {
+    padding: 8px;
 }
 
 .assistiant {

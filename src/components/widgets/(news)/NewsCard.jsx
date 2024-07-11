@@ -1,6 +1,7 @@
 import React from 'react';
 import cl from './style.module.css'
 import {Link} from "react-router-dom";
+import {convertDate} from "../../constants/convertDate";
 
 const NewsCard = ({id, img, tittle, text, date}) => {
     return (
@@ -10,7 +11,7 @@ const NewsCard = ({id, img, tittle, text, date}) => {
             </Link>
             <div className={cl.card_text_container}>
                 <div className={cl.card_date}>
-                    {date}
+                    {convertDate(date)}
                 </div>
                 <Link to={`/news/${id}`} className={cl.card_link}>
                     <div className={cl.card_tittle}>
