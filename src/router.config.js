@@ -6,13 +6,16 @@ import AdminPage from "./components/adminPage/AdminPage";
 import JuryPage from "./components/juryPage/JuryPage";
 import UserPage from "./components/userPage/UserPage";
 import React from "react";
+import { AdminEventsPage } from "./pages/admin/events";
+import { AdminEventPage } from "./pages/admin/event";
 
 const PAGES = {
   home: '/',
   events: '/events',
   admin: '/admin',
   jury: '/jury',
-  user: '/user'
+  user: '/user',
+  adminEvents: '/admin/events',
 }
 
 const LABELS = {
@@ -20,7 +23,8 @@ const LABELS = {
   events: 'Мероприятия',
   admin: '',
   jury: '',
-  user: ''
+  user: '',
+  adminEvents: 'Мероприятия',
 }
 
 export const ROUTES = {
@@ -28,7 +32,8 @@ export const ROUTES = {
   labels: LABELS,
   redirect: {
     event: (id) => `${PAGES.events}/${id}`,
-    eventRegister: `${PAGES.events}/register/`
+    eventRegister: `${PAGES.events}/register/`,
+    adminEventEdit: (id) => `${PAGES.adminEvents}/${id}`
   }
 }
 
@@ -47,7 +52,20 @@ export const routerConfig = createBrowserRouter([
   },
   {
     path: PAGES.admin,
-    element: <AdminPage />,
+    children: [
+      {
+        index: true,
+        element: <AdminPage />,
+      },
+      {
+        path: ROUTES.pages.adminEvents,
+        element: <AdminEventsPage />
+      },
+      {
+        path: `${ROUTES.pages.adminEvents}/:id`,
+        element: <AdminEventPage />
+      }
+    ]
   },
   {
     path: PAGES.jury,

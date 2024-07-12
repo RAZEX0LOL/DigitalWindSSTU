@@ -26,9 +26,15 @@ export class EventService {
    * @return {Promise<{data: Event[]}>}
    * */
   getEvents(params) {
-    return request.get('/events', {
-      params,
+    // return request.get('/events', {
+    //   params,
+    // })
+
+    return new Promise((res, rej) => {
+      const { offset = 0, limit = Infinity } = params;
+      res({ data: EVENTS_MOCK.slice(offset, offset + limit) })
     })
+
   }
 
   /** 
@@ -42,6 +48,12 @@ export class EventService {
       if (!item) return rej()
 
       return res({ data: item })
+    })
+  }
+
+  async updateEvent(data) {
+    return new Promise((res) => {
+      return res({ data })
     })
   }
 
