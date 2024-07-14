@@ -2,6 +2,7 @@ import React from 'react';
 import {useParams} from "react-router-dom";
 import {news} from "../constants/news";
 import Header from "../Header";
+import NewsSolo from "./NewsSolo";
 
 const NewsPage = () => {
     const {id} = useParams()
@@ -10,11 +11,22 @@ const NewsPage = () => {
     const newsItem = news.find(item => item.id === newsId)
 
     return (
-        <div>
-            <img src={newsItem.img} alt={"not found"}/>
-            {newsItem.text}
-            {newsItem.tittle}
-        </div>
+        <>
+            <Header/>
+            {
+                newsItem ?
+                    (
+                        <NewsSolo {...newsItem}/>
+                    ) :
+                    (
+                        <div>
+                            <p>
+                                Не найдена новость
+                            </p>
+                        </div>
+                    )
+            }
+        </>
     );
 };
 
