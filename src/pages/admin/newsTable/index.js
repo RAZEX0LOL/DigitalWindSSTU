@@ -1,0 +1,1 @@
+export { NewsTablePage as AdminNewsTablePage } from './ui/page'

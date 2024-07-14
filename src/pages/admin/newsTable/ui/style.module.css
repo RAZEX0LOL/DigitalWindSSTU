@@ -1,0 +1,32 @@
+.main {
+  padding: 20px 0;
+}
+
+.button {
+  padding: 8px 12px;
+  background: var(--primary-color);
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background: #e3e4e4;
+}
+
+.table th,
+.table td {
+  background: #ffffff;
+  padding: 10px;
+  border: 1px solid #ffffff;
+  text-align: left;
+  color: #2196F3;
+}
+
+.table th {
+  background-color: #ffffff;
+}

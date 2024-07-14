@@ -32,6 +32,7 @@ export default function HeaderJury({ handleJuryClick, handleLoginChangeClick, ha
           <p className="header__nav" onClick={handleJuryClick}>Жюри</p>
           <p className="header__nav" onClick={handleLoginChangeClick}>Мои данные</p>
           <Link to={ROUTES.pages.adminEvents} className="header__nav">{ROUTES.labels.adminEvents}</Link>
+          <Link to={ROUTES.pages.adminNews} className="header__nav">{ROUTES.labels.adminNews}</Link>
         </div>
       </nav>
     </header>

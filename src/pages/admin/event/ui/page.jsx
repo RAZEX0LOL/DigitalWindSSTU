@@ -12,7 +12,6 @@ export const EventPage = () => {
   const [event, setEvent] = useState(null);
 
   const form = useForm()
-  console.log(form)
 
   const handleGetEventData = useCallback(async () => {
     const { data } = await EventService.instance.getEventById(id)

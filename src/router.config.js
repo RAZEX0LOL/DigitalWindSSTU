@@ -1,13 +1,15 @@
-import { createBrowserRouter } from "react-router-dom";
+import {createBrowserRouter} from "react-router-dom";
 import App from "./App";
-import { EventsPage } from "./pages/events";
-import { EventPage } from "./pages/event";
+import {EventsPage} from "./pages/events";
+import {EventPage} from "./pages/event";
 import AdminPage from "./components/adminPage/AdminPage";
 import JuryPage from "./components/juryPage/JuryPage";
 import UserPage from "./components/userPage/UserPage";
 import React from "react";
-import { AdminEventsPage } from "./pages/admin/events";
-import { AdminEventPage } from "./pages/admin/event";
+import {AdminEventsPage} from "./pages/admin/events";
+import {AdminEventPage} from "./pages/admin/event";
+import {AdminNewsPage} from "./pages/admin/news";
+import {AdminNewsTablePage} from "./pages/admin/newsTable";
 
 const PAGES = {
   home: '/',
@@ -16,6 +18,7 @@ const PAGES = {
   jury: '/jury',
   user: '/user',
   adminEvents: '/admin/events',
+  adminNews: '/admin/news'
 }
 
 const LABELS = {
@@ -25,6 +28,7 @@ const LABELS = {
   jury: '',
   user: '',
   adminEvents: 'Мероприятия',
+  adminNews: 'Новости'
 }
 
 export const ROUTES = {
@@ -33,7 +37,8 @@ export const ROUTES = {
   redirect: {
     event: (id) => `${PAGES.events}/${id}`,
     eventRegister: `${PAGES.events}/register/`,
-    adminEventEdit: (id) => `${PAGES.adminEvents}/${id}`
+    adminEventEdit: (id) => `${PAGES.adminEvents}/${id}`,
+    adminNewsEdit: (id) => `${PAGES.adminNews}/${id}`
   }
 }
 
@@ -64,6 +69,14 @@ export const routerConfig = createBrowserRouter([
       {
         path: `${ROUTES.pages.adminEvents}/:id`,
         element: <AdminEventPage />
+      },
+      {
+        path: `${ROUTES.pages.adminNews}/:id`,
+        element: <AdminNewsPage/>
+      },
+      {
+        path: `${ROUTES.pages.adminNews}`,
+        element: <AdminNewsTablePage/>
       }
     ]
   },
@@ -72,7 +85,7 @@ export const routerConfig = createBrowserRouter([
     element: <JuryPage />,
   },
   {
-    path: PAGES.jury,
+    path: PAGES.user,
     element: <UserPage />
   }
 ])
