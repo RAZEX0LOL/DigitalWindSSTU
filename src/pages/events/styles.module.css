@@ -1,0 +1,19 @@
+.events {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+
+.title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.1;
+}

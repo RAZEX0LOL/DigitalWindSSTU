@@ -1,0 +1,1 @@
+export {Page as EventsPage} from './page'
