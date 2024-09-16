@@ -3,7 +3,7 @@
 // import unplash1 from "./../assets/unsplash_g1Kr4Ozfoac.png"
 // import "./../index.css"
 //
-// export default function News(props){
+// export default function news(props){
 //     return(
 //         <div className={"news-block"}>
 //             <img src={GR100} alt="Error"/>
@@ -59,10 +59,27 @@ import React from "react";
 import GR100 from "../../assets/Group 100.png";
 import unplash1 from "../../assets/unsplash_g1Kr4Ozfoac.png";
 import "../../index.css";
+import unplash from "../../assets/unsplash_g1Kr4Ozfoac.png";
+import AllNewsCard from "../widgets/(news)/ui/AllNewsCard";
+import {news} from "../constants/news";
 
-export default function News(props){
+export default function News(props) {
+
     if (!props.newsData || props.newsData.length === 0) {
-        return <div className={"no-news"}>Новости отсутствуют</div>;
+        return (
+            <div className={"all_news"}>
+                <div className={"allNewsH1Container"}>
+                    <h1 className={"allNewsH1"}>
+                        Все новости
+                    </h1>
+                </div>
+                <div className={"allNewsContainer"}>
+                    {news.map((item) => (
+                        <AllNewsCard {...item} />
+                    ))}
+                </div>
+            </div>
+        )
     }
 
     return (

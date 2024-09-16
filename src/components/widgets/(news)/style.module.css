@@ -1,0 +1,65 @@
+.main_card {
+    max-width: 406px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.card_date{
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    display: inline-block;
+    color: #999;
+    margin-top: 10px;
+}
+
+.card_tittle{
+    margin-top: 10px;
+    font-size: 15px;
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: 600;
+    margin-bottom: 13px;
+    line-height: 18px;
+    word-break: break-word;
+}
+
+.card_text_container{
+    padding: 8px;
+}
+
+.card_text{
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.card_link{
+    text-decoration: none;
+    text-underline: none;
+    color: black
+}
+
+.scrollDate {
+    font-size: 11px;
+    color: #959595;
+    line-height: 1;
+    margin-bottom: 12px;
+    padding-top: 6px;
+}
+
+.scrollMain{
+    padding: 8px;
+    border-bottom: 1px dashed #dbdbdb;
+}
+
+.card_link{
+    text-decoration: none;
+    text-underline: none;
+    color: black
+}
+
+.scrollText {
+    font-size: 13px;
+    font-weight: 300;
+}
