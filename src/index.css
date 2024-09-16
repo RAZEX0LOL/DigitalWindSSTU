@@ -530,8 +530,9 @@ nav {
     margin-top: 16px;
 }
 
-.authors img{
+.authors img {
     width: 100%;
+    margin-top: 40px;
 }
 .sgtu-authors{
     width: 80%;

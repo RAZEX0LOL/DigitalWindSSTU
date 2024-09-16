@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import AllNews from "./components/mainPage/news/AllNews";
+import React, { useCallback, useEffect, useState } from "react";
+import axios from "axios"; // axios вместо request
+import AllNews from "./components/mainPage/news/AllNews"; // Корректный импорт
 import Footer from "./components/Footer";
 import AllInfo from "./components/mainPage/AllInfo";
 import MainPage from "./components/mainPage/MainPage";
@@ -13,7 +13,7 @@ import WorkAllInfo from "./components/userPage/WorkAllInfo";
 import Auth from "./components/mainPage/Auth";
 import Register from "./components/mainPage/Register";
 import ReturnPassword from "./components/mainPage/ReturnPassword";
-import News from "./components/mainPage/News"; // Import the new component
+import News from "./components/mainPage/News"; // Используем новостной компонент
 
 export default function App() {
     const [showAllNews, setShowAllNews] = useState(false);
@@ -29,25 +29,27 @@ export default function App() {
     const [showMainPage, setShowMainPage] = useState(true);
     const [showAuth, setShowAuth] = useState(false);
     const [showRegister, setShowRegister] = useState(false);
-    const [showReturnPassword, setShowReturnPassword] = useState(false); // New state
+    const [showReturnPassword, setShowReturnPassword] = useState(false);
+
+    const handleFetchData = useCallback(async () => {
+        try {
+            const [newsResponse, allNewsResponse, allWorksResponse] = await Promise.all([
+                axios.get("http://localhost:8000/api/news/last"),
+                axios.get("http://localhost:8000/api/news"),
+                axios.get("http://localhost:8000/api/creations"),
+            ]);
+            setNewsData(newsResponse.data);
+            setAllNewsData(allNewsResponse.data);
+            setWorksData(allWorksResponse.data);
+        } catch (error) {
+            alert("Ошибка при загрузке данных! Повторите попытку позже");
+            console.log(error);
+        }
+    }, []);
 
     useEffect(() => {
-        async function fetchData() {
-            try {
-                const newsResponse = await axios.get("http://localhost:8000/api/news/last");
-                const allNewsResponse = await axios.get("http://localhost:8000/api/news");
-                const allWorksResponse = await axios.get("http://localhost:8000/api/creations");
-                setNewsData(newsResponse.data);
-                setAllNewsData(allNewsResponse.data);
-                setWorksData(allWorksResponse.data);
-            } catch (error) {
-                alert("Ошибка при загрузке данных! Повторите попытку позже");
-                console.log(error);
-            }
-        }
-
-        fetchData();
-    }, []);
+        handleFetchData();
+    }, [handleFetchData]);
 
     const showNews = () => {
         resetOtherViews();
@@ -110,7 +112,7 @@ export default function App() {
     const showAuthHandler = () => {
         setShowAuth(true);
         setShowRegister(false);
-        setShowReturnPassword(false); // Hide return password view
+        setShowReturnPassword(false);
     };
 
     const showReturnPasswordHandler = () => {
@@ -144,7 +146,7 @@ export default function App() {
             {!showAuth && !showRegister && !showReturnPassword && showOrganizatorsAndPartners && <OrganizatorsAndPartners />}
             {!showAuth && !showRegister && !showReturnPassword && showCatalog && <Catalog worksData={worksData} showWorkInfo={showWorkInfo} />}
             {!showAuth && !showRegister && !showReturnPassword && showWork && selectedWorkData && <WorkAllInfo workData={selectedWorkData} />}
-            {showAuth && <Auth showRegister={showRegisterHandler} showReturnPassword={showReturnPasswordHandler} />} {/* Pass handler */}
+            {showAuth && <Auth showRegister={showRegisterHandler} showReturnPassword={showReturnPasswordHandler} />}
             {showRegister && <Register showAuth={showAuthHandler} />}
             {showReturnPassword && <ReturnPassword showAuth={showAuthHandler} />}
             {!showAuth && !showRegister && !showReturnPassword && <Footer />}
